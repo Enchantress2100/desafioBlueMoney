@@ -1,6 +1,5 @@
 const https = require('https')
 const fs = require('fs')
-const child_process = require('child_process')
 
 //recibir por linea de comandos los argumentos
 const argumentos = process.argv.slice(2)
@@ -10,13 +9,6 @@ const indicador = (argumentos[2])
 const cantidadPesos = (argumentos[3])
 let dineroCambiado= (argumentos[4])
 const fecha = new Date()
-
-
-//prueba
-console.log(`${archivo}`) //pesos
-console.log(`${extensionArchivo}`) //pdf
-console.log(`${indicador}`) //dolar
-console.log(`${cantidadPesos}`) //250000
 
 //llamada a la api y almacenar el resultado en una variable
 https.get('https://mindicador.cl/api', function (res) {
